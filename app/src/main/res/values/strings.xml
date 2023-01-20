@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RickAndMorty</string>
+    <string name="intro">O universo de Rick and Morty é composto por uma série de criaturas  bizarras e ambientes inóspitos.</string>
+    <string name="description">Este app foi feito para que você possa conhecer tudo isso de uma maneira simples e divertida.</string>
+    <string name="button_characters">Personagens</string>
+    <string name="button_places">Lugares</string>
+</resources>
