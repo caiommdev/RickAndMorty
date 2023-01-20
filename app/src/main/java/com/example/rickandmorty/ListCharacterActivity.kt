@@ -24,11 +24,12 @@ class ListCharacterActivity : AppCompatActivity() {
         setup()
     }
 
+
     private fun setup() {
         binding.apply {
             listItem.adapter = listAdapter
 
-            setSupportActionBar(toolBar)
+            setSupportActionBar(listToolBar)
             supportActionBar?.setDisplayShowHomeEnabled(true)
         }
         createData()
@@ -41,10 +42,42 @@ class ListCharacterActivity : AppCompatActivity() {
     }
 
     private fun createData(){
-        item.add(Character(id = "1", title = "Rick", description = "Humano"))
-        item.add(Character(id = "2", title = "Morty", description = "Humano"))
-        item.add(Character(id = "3", title = "Armothy", description = "Desconhecido"))
-        item.add(Character(id = "4", title = "Mr.Sneezy", description = "Humano"))
+        item.add(
+            Character(
+                id = "1",
+                title = "Rick",
+                description = "Humano",
+                status = "Vivo",
+                origin = "Earth"
+            )
+        )
+        item.add(
+            Character(
+                id = "2",
+                title = "Morty",
+                description = "Humano",
+                status = "Vivo",
+                origin = "Earth"
+            )
+        )
+        item.add(
+            Character(
+                id = "3",
+                title = "Armothy",
+                description = "Desconhecido",
+                status = "Vivo",
+                origin = "Post-Apocalyptic Earth"
+            )
+        )
+        item.add(
+            Character(
+                id = "4",
+                title = "Mr.Sneezy",
+                description = "Humano",
+                status = "morto",
+                origin = "Earth"
+            )
+        )
 
         listAdapter.addItems(item)
     }
