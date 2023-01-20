@@ -3,6 +3,7 @@ package com.example.rickandmorty
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import com.example.rickandmorty.databinding.ActivityListCharacterBinding
 
 class ListCharacterActivity : AppCompatActivity() {
@@ -26,8 +27,17 @@ class ListCharacterActivity : AppCompatActivity() {
     private fun setup() {
         binding.apply {
             listItem.adapter = listAdapter
+
+            setSupportActionBar(toolBar)
+            supportActionBar?.setDisplayShowHomeEnabled(true)
         }
         createData()
+    }
+
+    private fun onItemSelected(item: Character){
+        intent = Intent(this, CharacterDetailActivity::class.java)
+        intent.putExtra(CharacterDetailActivity.CHARACTER, item)
+        startActivity(intent)
     }
 
     private fun createData(){
@@ -39,9 +49,15 @@ class ListCharacterActivity : AppCompatActivity() {
         listAdapter.addItems(item)
     }
 
-    private fun onItemSelected(item: Character){
-        intent = Intent(this, CharacterDetailActivity::class.java)
-        intent.putExtra(CharacterDetailActivity.CHARACTER, item)
-        startActivity(intent)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
+
 }

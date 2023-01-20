@@ -6,71 +6,92 @@
     android:layout_height="match_parent"
     android:layout_weight="10">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/home_menu_marvel_logo"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/menu_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:srcCompat="@drawable/ic_rick_and_morty"
+        app:titleMargin="8dp"
+        app:title="@string/tool_bar_label"
         />
 
-    <com.google.android.material.textview.MaterialTextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/intro"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:layout_weight="3"
-        />
+        android:layout_height="wrap_content">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/description"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:layout_weight="3"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/menu_button_characters"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/light_gray"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
-        android:text="@string/button_characters"
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/home_menu_marvel_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:srcCompat="@drawable/ic_rick_and_morty"
+                />
 
-        />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/intro"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_weight="3"
+                />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/menu_button_series"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/light_gray"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
-        android:text="@string/button_places"
-        />
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/description"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_weight="3"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_button_characters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/light_gray"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
+                android:text="@string/button_characters"
+
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_button_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/light_gray"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
+                android:text="@string/button_places"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
