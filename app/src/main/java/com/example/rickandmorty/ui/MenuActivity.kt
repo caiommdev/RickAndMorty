@@ -1,11 +1,17 @@
-package com.example.rickandmorty
+package com.example.rickandmorty.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.rickandmorty.R
+import com.example.rickandmorty.data.CharacterService
 import com.example.rickandmorty.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
+
+    private val service by lazy {
+        CharacterService()
+    }
 
     lateinit var binding: ActivityMenuBinding
 
@@ -18,10 +24,12 @@ class MenuActivity : AppCompatActivity() {
         setContentView(view)
 
         setup()
+
+
     }
 
     private fun setup() {
-        val intent = Intent(this,ListCharacterActivity::class.java)
+        val intent = Intent(this, ListCharacterActivity::class.java)
         binding.apply {
             menuButtonCharacters.setOnClickListener {
                 startActivity(intent)

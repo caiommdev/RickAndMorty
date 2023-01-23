@@ -1,4 +1,4 @@
-package com.example.rickandmorty
+package com.example.rickandmorty.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
