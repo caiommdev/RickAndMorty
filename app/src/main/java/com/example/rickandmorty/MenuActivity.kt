@@ -27,9 +27,12 @@ class MenuActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            menuButtonSeries.setOnClickListener {
+            menuButtonPlace.setOnClickListener {
                 startActivity(intent)
             }
+
+            setSupportActionBar(menuToolBar)
+            supportActionBar?.setDisplayShowHomeEnabled(true)
         }
     }
 }

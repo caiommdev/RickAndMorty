@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".CharacterDetailActivity">
 
+
+
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="53dp"
         android:layout_height="38dp"
