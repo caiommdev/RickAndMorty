@@ -6,7 +6,7 @@ import retrofit2.http.Path
 interface CharacterGateway {
 
      @GET("character")
-     suspend fun getAllCharacters(): Response
+     suspend fun getAllCharacters(): ApiResponse
 
      @GET("character/{id}")
      suspend fun getCharacter(
