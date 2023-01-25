@@ -12,10 +12,6 @@ import kotlinx.coroutines.launch
 
 class MenuActivity : AppCompatActivity() {
 
-    private val service by lazy {
-        CharacterService()
-    }
-
     lateinit var binding: ActivityMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,11 +23,6 @@ class MenuActivity : AppCompatActivity() {
         setContentView(view)
 
         setup()
-
-        lifecycleScope.launch {
-            service.getAllCharacters()
-                .forEach {  println(it) }
-        }
     }
 
     private fun setup() {

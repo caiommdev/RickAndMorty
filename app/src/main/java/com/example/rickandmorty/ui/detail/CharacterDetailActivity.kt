@@ -3,13 +3,18 @@ package com.example.rickandmorty.ui.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.example.rickandmorty.databinding.ActivityCharacterDetailBinding
-import com.example.rickandmorty.ui.CharacterUi
+import com.example.rickandmorty.domain.Character
+import kotlinx.coroutines.launch
 
 class CharacterDetailActivity : AppCompatActivity() {
-    private val character by lazy{
-        intent?.extras?.getSerializable(CHARACTER)
+    private val character_id by lazy{
+        intent?.extras?.getInt(CHARACTER_ID)
     }
+
+    private val viewModel by viewModels<DetailViewModel> { DetailViewModel.Factory.build() }
 
     lateinit var binding: ActivityCharacterDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,18 +39,24 @@ class CharacterDetailActivity : AppCompatActivity() {
     }
 
     private fun setup() {
-        character?.let {
-            val item = it as? CharacterUi
-            binding.apply {
-                nameCharacter.text = item?.title.orEmpty()
-                race.text = item?.description.orEmpty()
-                status.text = item?.status.orEmpty()
-                origin.text = item?.origin.orEmpty()
+        character_id?.let {id ->
+            lifecycleScope.launch {
+                val character = viewModel.getCharacter(id)
+
+                character?.let {
+                    val item = it as? Character
+                    binding.apply {
+                        nameCharacter.text = item?.name.orEmpty()
+                        race.text = item?.species.orEmpty()
+                        status.text = item?.status?.name.orEmpty()
+                        origin.text = item?.origin?.name.orEmpty()
+                    }
+                }
             }
         }
     }
 
     companion object {
-        const val CHARACTER = "character"
+        const val CHARACTER_ID = "character_id"
     }
 }

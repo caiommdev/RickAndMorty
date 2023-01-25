@@ -5,14 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.example.rickandmorty.databinding.ActivityListCharacterBinding
 import com.example.rickandmorty.ui.detail.CharacterDetailActivity
-import com.example.rickandmorty.ui.CharacterUi
+import com.example.rickandmorty.domain.Character
+import kotlinx.coroutines.launch
 
 class ListCharacterActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityListCharacterBinding
-    private var item: MutableList<CharacterUi> = mutableListOf()
+    private var item: MutableList<Character> = mutableListOf()
 
     private val viewModel by viewModels<ListViewModel>{ ListViewModel.Factory.build() }
 
@@ -36,55 +38,22 @@ class ListCharacterActivity : AppCompatActivity() {
 
             setSupportActionBar(listToolBar)
             supportActionBar?.setDisplayShowHomeEnabled(true)
+
+            createCharacterData()
         }
-        createData()
     }
 
-    private fun onItemSelected(item: CharacterUi){
+    private fun onItemSelected(item: Character){
         intent = Intent(this, CharacterDetailActivity::class.java)
-        intent.putExtra(CharacterDetailActivity.CHARACTER, item)
+        intent.putExtra(CharacterDetailActivity.CHARACTER_ID, item.id)
         startActivity(intent)
     }
 
-    private fun createData(){
-        item.add(
-            CharacterUi(
-                id = "1",
-                title = "Rick",
-                description = "Humano",
-                status = "Vivo",
-                origin = "Earth"
-            )
-        )
-        item.add(
-            CharacterUi(
-                id = "2",
-                title = "Morty",
-                description = "Humano",
-                status = "Vivo",
-                origin = "Earth"
-            )
-        )
-        item.add(
-            CharacterUi(
-                id = "3",
-                title = "Armothy",
-                description = "Desconhecido",
-                status = "Vivo",
-                origin = "Post-Apocalyptic Earth"
-            )
-        )
-        item.add(
-            CharacterUi(
-                id = "4",
-                title = "Mr.Sneezy",
-                description = "Humano",
-                status = "morto",
-                origin = "Earth"
-            )
-        )
-
-        listAdapter.addItems(item)
+    private fun createCharacterData() {
+        lifecycleScope.launch {
+            viewModel.getCharacters()
+                .let (listAdapter::addItems)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

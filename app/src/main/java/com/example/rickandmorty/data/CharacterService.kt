@@ -1,6 +1,8 @@
 package com.example.rickandmorty.data
 
 import com.example.rickandmorty.domain.Character
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class CharacterService  {
 
@@ -9,15 +11,20 @@ class CharacterService  {
     }
 
     suspend fun getAllCharacters(): List<Character> =
-        gateway
-            .getAllCharacters()
-            .results
-            .map { CharacterMapper.toDomain(it) }
+        withContext(Dispatchers.IO) {
+            gateway
+                .getAllCharacters()
+                .results
+                .map { CharacterMapper.toDomain(it) }
+        }
 
 
-    suspend fun getCharacter(id: Int): Character {
-        return gateway
-            .getCharacter(id)
-            .let { CharacterMapper.toDomain(it) }
-    }
+
+    suspend fun getCharacter(id: Int): Character =
+        withContext(Dispatchers.IO) {
+             gateway
+                .getCharacter(id)
+                .let { CharacterMapper.toDomain(it) }
+        }
+
 }

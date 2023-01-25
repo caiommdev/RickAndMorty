@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.list
+package com.example.rickandmorty.ui.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -7,20 +7,20 @@ import com.example.rickandmorty.domain.Character
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class ListViewModel(
+class DetailViewModel (
     val service: CharacterService
 ): ViewModel() {
 
-    suspend fun getCharacters(): List<Character> =
-        withContext(Dispatchers.Default) {
-            service.getAllCharacters()
+    suspend fun getCharacter(id: Int): Character =
+        withContext(Dispatchers.Default){
+            service.getCharacter(id = id)
         }
 
     object Factory {
         fun build() =
             object : ViewModelProvider.Factory {
                 override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    return ListViewModel(
+                    return DetailViewModel(
                         service = CharacterService()
                     ) as T
                 }

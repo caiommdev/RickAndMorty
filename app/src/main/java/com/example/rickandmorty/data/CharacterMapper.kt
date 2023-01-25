@@ -10,7 +10,9 @@ object CharacterMapper {
             Character(
                 id = id,
                 name = name,
-                status = CharacterStatus.toStatus(status)
+                status = CharacterStatus.toStatus(status),
+                species = species,
+                origin = origin
             )
         }
 
