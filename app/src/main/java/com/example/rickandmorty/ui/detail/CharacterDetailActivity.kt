@@ -1,9 +1,10 @@
-package com.example.rickandmorty.ui
+package com.example.rickandmorty.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.rickandmorty.databinding.ActivityCharacterDetailBinding
+import com.example.rickandmorty.ui.CharacterUi
 
 class CharacterDetailActivity : AppCompatActivity() {
     private val character by lazy{
@@ -34,7 +35,7 @@ class CharacterDetailActivity : AppCompatActivity() {
 
     private fun setup() {
         character?.let {
-            val item = it as? Character
+            val item = it as? CharacterUi
             binding.apply {
                 nameCharacter.text = item?.title.orEmpty()
                 race.text = item?.description.orEmpty()

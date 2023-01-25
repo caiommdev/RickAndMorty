@@ -14,13 +14,13 @@
         android:theme="@style/Theme.RickAndMorty"
         tools:targetApi="31">
         <activity
-            android:name=".ui.CharacterDetailActivity"
+            android:name=".ui.detail.CharacterDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ListCharacterActivity"
+            android:name=".ui.list.ListCharacterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MenuActivity"
+            android:name=".ui.home.MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

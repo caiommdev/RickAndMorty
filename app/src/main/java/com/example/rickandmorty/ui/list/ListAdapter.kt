@@ -1,19 +1,20 @@
-package com.example.rickandmorty.ui
+package com.example.rickandmorty.ui.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.ItemRowBinding
+import com.example.rickandmorty.ui.CharacterUi
 
 
 class ListAdapter:
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemRowBinding): RecyclerView.ViewHolder(binding.root)
-    var onClick: ((Character) -> Unit)? = null
+    var onClick: ((CharacterUi) -> Unit)? = null
 
 
-    private var items: MutableList<Character> = mutableListOf()
+    private var items: MutableList<CharacterUi> = mutableListOf()
         set(value) {
             field = ArrayList(value)
         }
@@ -43,12 +44,12 @@ class ListAdapter:
         return items.size
     }
 
-    fun addItems(charactersToAdd: List<Character>) {
+    fun addItems(charactersToAdd: List<CharacterUi>) {
         this.items.addAll(charactersToAdd)
         notifyDataSetChanged()
     }
 
-    fun update(allCharacters: List<Character>) {
+    fun update(allCharacters: List<CharacterUi>) {
         this.items.clear()
         this.items.addAll(allCharacters)
         notifyDataSetChanged()

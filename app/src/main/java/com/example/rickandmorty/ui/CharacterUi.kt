@@ -2,7 +2,7 @@ package com.example.rickandmorty.ui
 
 import java.io.Serializable
 
-data class Character (
+data class CharacterUi (
     val id: String? = null,
     val title: String? = null,
     val description: String? = null,

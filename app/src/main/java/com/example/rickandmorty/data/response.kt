@@ -10,5 +10,6 @@ data class ApiResponse(
 @Serializable
 data class CharacterResponse (
     val id: Int? = null,
-    val name: String? = null
+    val name: String? = null,
+    val status: String? = null
 )

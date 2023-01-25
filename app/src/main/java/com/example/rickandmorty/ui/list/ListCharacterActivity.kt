@@ -1,15 +1,20 @@
-package com.example.rickandmorty.ui
+package com.example.rickandmorty.ui.list
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.activity.viewModels
 import com.example.rickandmorty.databinding.ActivityListCharacterBinding
+import com.example.rickandmorty.ui.detail.CharacterDetailActivity
+import com.example.rickandmorty.ui.CharacterUi
 
 class ListCharacterActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityListCharacterBinding
-    private var item: MutableList<Character> = mutableListOf()
+    private var item: MutableList<CharacterUi> = mutableListOf()
+
+    private val viewModel by viewModels<ListViewModel>{ ListViewModel.Factory.build() }
 
     private val listAdapter: ListAdapter by lazy {
         ListAdapter().apply {
@@ -35,7 +40,7 @@ class ListCharacterActivity : AppCompatActivity() {
         createData()
     }
 
-    private fun onItemSelected(item: Character){
+    private fun onItemSelected(item: CharacterUi){
         intent = Intent(this, CharacterDetailActivity::class.java)
         intent.putExtra(CharacterDetailActivity.CHARACTER, item)
         startActivity(intent)
@@ -43,7 +48,7 @@ class ListCharacterActivity : AppCompatActivity() {
 
     private fun createData(){
         item.add(
-            Character(
+            CharacterUi(
                 id = "1",
                 title = "Rick",
                 description = "Humano",
@@ -52,7 +57,7 @@ class ListCharacterActivity : AppCompatActivity() {
             )
         )
         item.add(
-            Character(
+            CharacterUi(
                 id = "2",
                 title = "Morty",
                 description = "Humano",
@@ -61,7 +66,7 @@ class ListCharacterActivity : AppCompatActivity() {
             )
         )
         item.add(
-            Character(
+            CharacterUi(
                 id = "3",
                 title = "Armothy",
                 description = "Desconhecido",
@@ -70,7 +75,7 @@ class ListCharacterActivity : AppCompatActivity() {
             )
         )
         item.add(
-            Character(
+            CharacterUi(
                 id = "4",
                 title = "Mr.Sneezy",
                 description = "Humano",
