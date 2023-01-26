@@ -1,13 +1,13 @@
-package com.example.rickandmorty.ui.detail
+package com.example.rickandmorty.ui.detail.character
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.rickandmorty.data.CharacterService
+import com.example.rickandmorty.data.character.CharacterService
 import com.example.rickandmorty.domain.Character
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class DetailViewModel (
+class CharacterDetailViewModel (
     val service: CharacterService
 ): ViewModel() {
 
@@ -20,7 +20,7 @@ class DetailViewModel (
         fun build() =
             object : ViewModelProvider.Factory {
                 override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    return DetailViewModel(
+                    return CharacterDetailViewModel(
                         service = CharacterService()
                     ) as T
                 }

@@ -1,27 +1,27 @@
-package com.example.rickandmorty.ui.list
+package com.example.rickandmorty.ui.list.locations
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.rickandmorty.data.CharacterService
-import com.example.rickandmorty.domain.Character
+import com.example.rickandmorty.data.location.LocationService
+import com.example.rickandmorty.domain.Location
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class ListViewModel(
-    val service: CharacterService
+class ListLocationViewModel (
+    val service: LocationService
 ): ViewModel() {
 
-    suspend fun getCharacters(): List<Character> =
+    suspend fun getLocations(): List<Location> =
         withContext(Dispatchers.Default) {
-            service.getAllCharacters()
+            service.getAllLocations()
         }
 
     object Factory {
         fun build() =
             object : ViewModelProvider.Factory {
                 override fun <T : ViewModel> create(modelClass: Class<T>): T {
-                    return ListViewModel(
-                        service = CharacterService()
+                    return ListLocationViewModel(
+                        service = LocationService()
                     ) as T
                 }
             }

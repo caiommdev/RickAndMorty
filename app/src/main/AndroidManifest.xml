@@ -14,13 +14,16 @@
         android:theme="@style/Theme.RickAndMorty"
         tools:targetApi="31">
         <activity
-            android:name=".ui.list.ListLocationActivity"
+            android:name=".ui.detail.location.LocationDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.detail.CharacterDetailActivity"
+            android:name=".ui.list.locations.ListLocationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.list.ListCharacterActivity"
+            android:name=".ui.detail.character.CharacterDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.list.characters.ListCharacterActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.MenuActivity"

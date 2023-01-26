@@ -1,20 +1,20 @@
-package com.example.rickandmorty.ui.list
+package com.example.rickandmorty.ui.list.locations
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.ItemRowBinding
-import com.example.rickandmorty.domain.Character
+import com.example.rickandmorty.domain.Location
 
 
-class ListAdapter:
-    RecyclerView.Adapter<ListAdapter.ViewHolder>() {
+class ListLocationAdapter:
+    RecyclerView.Adapter<ListLocationAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemRowBinding): RecyclerView.ViewHolder(binding.root)
-    var onClick: ((Character) -> Unit)? = null
+    var onClick: ((Location) -> Unit)? = null
 
 
-    private var items: MutableList<Character> = mutableListOf()
+    private var items: MutableList<Location> = mutableListOf()
         set(value) {
             field = ArrayList(value)
         }
@@ -32,7 +32,7 @@ class ListAdapter:
         holder.apply {
             val item = items[position]
             binding.title.text = item.name
-            binding.description.text = item.species
+            binding.description.text = item.type
 
             itemView.setOnClickListener {
                 onClick?.invoke(item)
@@ -44,14 +44,14 @@ class ListAdapter:
         return items.size
     }
 
-    fun addItems(charactersToAdd: List<Character>) {
+    fun addItems(charactersToAdd: List<Location>) {
         this.items.addAll(charactersToAdd)
         notifyDataSetChanged()
     }
 
-    fun update(allCharacters: List<Character>) {
+    fun update(allLocations: List<Location>) {
         this.items.clear()
-        this.items.addAll(allCharacters)
+        this.items.addAll(allLocations)
         notifyDataSetChanged()
     }
 

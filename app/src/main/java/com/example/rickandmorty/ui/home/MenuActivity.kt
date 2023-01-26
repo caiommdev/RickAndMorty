@@ -3,13 +3,10 @@ package com.example.rickandmorty.ui.home
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.lifecycleScope
 import com.example.rickandmorty.R
-import com.example.rickandmorty.data.CharacterService
 import com.example.rickandmorty.databinding.ActivityMenuBinding
-import com.example.rickandmorty.ui.list.ListCharacterActivity
-import com.example.rickandmorty.ui.list.ListLocationActivity
-import kotlinx.coroutines.launch
+import com.example.rickandmorty.ui.list.characters.ListCharacterActivity
+import com.example.rickandmorty.ui.list.locations.ListLocationActivity
 
 class MenuActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.list
+package com.example.rickandmorty.ui.list.characters
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,7 @@ import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.rickandmorty.databinding.ActivityListCharacterBinding
-import com.example.rickandmorty.ui.detail.CharacterDetailActivity
+import com.example.rickandmorty.ui.detail.character.CharacterDetailActivity
 import com.example.rickandmorty.domain.Character
 import kotlinx.coroutines.launch
 
@@ -16,10 +16,10 @@ class ListCharacterActivity : AppCompatActivity() {
     lateinit var binding: ActivityListCharacterBinding
     private var item: MutableList<Character> = mutableListOf()
 
-    private val viewModel by viewModels<ListViewModel>{ ListViewModel.Factory.build() }
+    private val viewModel by viewModels<ListCharacterViewModel>{ ListCharacterViewModel.Factory.build() }
 
-    private val listAdapter: ListAdapter by lazy {
-        ListAdapter().apply {
+    private val listCharacterAdapter: ListCharacterAdapter by lazy {
+        ListCharacterAdapter().apply {
             onClick = this@ListCharacterActivity::onItemSelected
         }
     }
@@ -34,7 +34,7 @@ class ListCharacterActivity : AppCompatActivity() {
 
     private fun setup() {
         binding.apply {
-            listItem.adapter = listAdapter
+            listItem.adapter = listCharacterAdapter
 
             setSupportActionBar(listToolBar)
             supportActionBar?.setDisplayShowHomeEnabled(true)
@@ -52,7 +52,7 @@ class ListCharacterActivity : AppCompatActivity() {
     private fun createCharacterData() {
         lifecycleScope.launch {
             viewModel.getCharacters()
-                .let (listAdapter::addItems)
+                .let (listCharacterAdapter::addItems)
         }
     }
 

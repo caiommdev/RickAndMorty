@@ -8,4 +8,7 @@
     <string name="race">Raça:</string>
     <string name="status">Status:</string>
     <string name="origin">Origem:</string>
+    <string name="id">ID:</string>
+    <string name="type">Tipo:</string>
+    <string name="dimension">Dimenção:</string>
 </resources>

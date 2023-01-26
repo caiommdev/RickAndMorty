@@ -1,5 +1,6 @@
-package com.example.rickandmorty.data
+package com.example.rickandmorty.data.character
 
+import com.example.rickandmorty.data.GatewayBuilder
 import com.example.rickandmorty.domain.Character
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

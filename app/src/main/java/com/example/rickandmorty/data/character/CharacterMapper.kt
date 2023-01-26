@@ -1,5 +1,6 @@
-package com.example.rickandmorty.data
+package com.example.rickandmorty.data.character
 
+import com.example.rickandmorty.data.character.CharacterResponse
 import com.example.rickandmorty.domain.Character
 import com.example.rickandmorty.domain.CharacterStatus
 

@@ -1,6 +1,6 @@
 package com.example.rickandmorty.domain
 
-import com.example.rickandmorty.data.Origin
+import com.example.rickandmorty.data.character.Origin
 
 data class Character(
     val id: Int? = null,

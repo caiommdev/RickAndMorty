@@ -1,9 +1,9 @@
-package com.example.rickandmorty.data
+package com.example.rickandmorty.data.character
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ApiResponse(
+data class ApiResponseForCharacter(
     val results: List<CharacterResponse>
 )
 

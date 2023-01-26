@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.detail
+package com.example.rickandmorty.ui.detail.character
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,7 +14,7 @@ class CharacterDetailActivity : AppCompatActivity() {
         intent?.extras?.getInt(CHARACTER_ID)
     }
 
-    private val viewModel by viewModels<DetailViewModel> { DetailViewModel.Factory.build() }
+    private val viewModel by viewModels<CharacterDetailViewModel> { CharacterDetailViewModel.Factory.build() }
 
     lateinit var binding: ActivityCharacterDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
