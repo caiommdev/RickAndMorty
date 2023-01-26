@@ -30,13 +30,11 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/character_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="400dp"
+                android:layout_height="340dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                app:srcCompat="@drawable/ic_armothy"
+                tools:srcCompat="@drawable/ic_armothy"
                 />
             
             <RelativeLayout

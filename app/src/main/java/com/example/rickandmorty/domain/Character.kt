@@ -7,7 +7,8 @@ data class Character(
     val name: String? = null,
     val status: CharacterStatus? = null,
     val species: String? = null,
-    val origin: Origin? = null
+    val origin: Origin? = null,
+    val image: String? = null
 )
 
 enum class CharacterStatus(

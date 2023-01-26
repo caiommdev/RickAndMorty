@@ -3,13 +3,14 @@ package com.example.rickandmorty.data
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 
 object GatewayBuilder {
 
     private const val BASE_URL = "https://rickandmortyapi.com/api/"
 
-    private val contentType = MediaType.get("application/json")
+    private val contentType = "application/json".toMediaType()
 
     private val json = Json { ignoreUnknownKeys = true }
 

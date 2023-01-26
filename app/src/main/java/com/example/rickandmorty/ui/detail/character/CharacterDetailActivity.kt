@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import coil.load
 import com.example.rickandmorty.databinding.ActivityCharacterDetailBinding
 import com.example.rickandmorty.domain.Character
 import kotlinx.coroutines.launch
@@ -50,6 +51,7 @@ class CharacterDetailActivity : AppCompatActivity() {
                         race.text = item?.species.orEmpty()
                         status.text = item?.status?.name.orEmpty()
                         origin.text = item?.origin?.name.orEmpty()
+                        characterImage.load(item?.image)
                     }
                 }
             }
