@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,13 +14,19 @@
         android:theme="@style/Theme.RickAndMorty"
         tools:targetApi="31">
         <activity
-            android:name=".ui.CharacterDetailActivity"
+            android:name=".ui.detail.location.LocationDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ListCharacterActivity"
+            android:name=".ui.list.locations.ListLocationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MenuActivity"
+            android:name=".ui.detail.character.CharacterDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.list.characters.ListCharacterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.MenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

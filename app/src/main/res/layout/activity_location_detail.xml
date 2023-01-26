@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detail.character.CharacterDetailActivity">
+    tools:context=".ui.detail.location.LocationDetailActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/details_tool_bar"
@@ -28,23 +28,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/character_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="24dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                app:srcCompat="@drawable/ic_armothy"
-                />
-            
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/name_character"
+                    android:id="@+id/name_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -56,81 +45,81 @@
                     />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/race_title"
+                    android:id="@+id/id_location_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginStart="20dp"
-                    android:text="@string/race"
+                    android:text="@string/id"
                     android:textStyle="normal"
                     android:textSize="16sp"
-                    android:layout_below="@id/name_character"
+                    android:layout_below="@id/name_location"
                     />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/race"
+                    android:id="@+id/id_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:layout_marginStart="20dp"
-                    tools:text="Humano"
+                    tools:text="1233445656"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_below="@id/race_title"
+                    android:layout_below="@id/id_location_title"
                     />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/status_title"
+                    android:id="@+id/type_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:text="@string/status"
+                    android:text="@string/type"
                     android:textStyle="normal"
                     android:textSize="16sp"
-                    android:layout_below="@id/race"
+                    android:layout_below="@id/id_location"
                     />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/status"
+                    android:id="@+id/type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:layout_marginStart="20dp"
-                    tools:text="Vivo"
+                    tools:text="planeta"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_below="@id/status_title"
+                    android:layout_below="@id/type_title"
                     />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/origin_title"
+                    android:id="@+id/dimension_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
-                    android:text="@string/origin"
+                    android:text="@string/dimension"
                     android:textStyle="normal"
                     android:textSize="16sp"
-                    android:layout_below="@id/status"
+                    android:layout_below="@id/type"
                     />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/origin"
+                    android:id="@+id/dimension"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:layout_marginStart="20dp"
-                    tools:text="Terra"
+                    tools:text="Dimension C-137"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_below="@id/origin_title"
+                    android:layout_below="@id/dimension_title"
                     android:paddingBottom="24dp"
                     />
 
@@ -140,4 +129,4 @@
 
     </ScrollView>
 
-</RelativeLayout>
+</RelativeLayout >
