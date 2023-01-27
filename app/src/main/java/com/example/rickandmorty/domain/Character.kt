@@ -21,6 +21,6 @@ enum class CharacterStatus(
     companion object {
         fun toStatus(status: String?) =
             CharacterStatus.values()
-                .first { it.status.equals(status, ignoreCase = true) }
+                .firstOrNull() { it.status.equals(status, ignoreCase = true) } ?: Unknown
     }
 }

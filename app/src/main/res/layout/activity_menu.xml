@@ -43,8 +43,7 @@
                 android:layout_marginEnd="10dp"
                 android:text="@string/intro"
                 android:textStyle="bold"
-                android:textSize="30sp"
-                android:layout_weight="3"
+                android:textSize="22sp"
                 />
 
             <com.google.android.material.textview.MaterialTextView
@@ -56,8 +55,7 @@
                 android:layout_marginEnd="10dp"
                 android:text="@string/description"
                 android:textStyle="bold"
-                android:textSize="30sp"
-                android:layout_weight="3"
+                android:textSize="22sp"
                 />
 
             <com.google.android.material.button.MaterialButton
@@ -69,9 +67,13 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/light_gray"
+                android:backgroundTint="@color/lime"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
                 android:text="@string/button_characters"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
 
                 />
 
@@ -85,9 +87,13 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/light_gray"
+                android:backgroundTint="@color/lime"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Rounded"
                 android:text="@string/button_places"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
                 />
 
         </LinearLayout>
