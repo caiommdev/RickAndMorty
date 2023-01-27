@@ -4,7 +4,7 @@
     <string name="description">Este app foi feito para que você possa conhecer tudo isso de uma maneira simples e divertida.</string>
     <string name="button_characters">Personagens</string>
     <string name="button_places">Lugares</string>
-    <string name="tool_bar_label">Tool Bar</string>
+    <string name="tool_bar_label">Rick and Morty API</string>
     <string name="race">Raça:</string>
     <string name="status">Status:</string>
     <string name="origin">Origem:</string>

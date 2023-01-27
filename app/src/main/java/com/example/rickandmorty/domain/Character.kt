@@ -7,7 +7,8 @@ data class Character(
     val name: String? = null,
     val status: CharacterStatus? = null,
     val species: String? = null,
-    val origin: Origin? = null
+    val origin: Origin? = null,
+    val image: String? = null
 )
 
 enum class CharacterStatus(
@@ -20,6 +21,6 @@ enum class CharacterStatus(
     companion object {
         fun toStatus(status: String?) =
             CharacterStatus.values()
-                .first { it.status.equals(status, ignoreCase = true) }
+                .firstOrNull() { it.status.equals(status, ignoreCase = true) } ?: Unknown
     }
 }

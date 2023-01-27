@@ -13,7 +13,8 @@ data class CharacterResponse (
     val name: String? = null,
     val status: String? = null,
     val species: String? = null,
-    val origin: Origin? = null
+    val origin: Origin? = null,
+    val image: String? = null
 )
 @Serializable
 data class Origin (
